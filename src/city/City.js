@@ -58,10 +58,12 @@ class City extends Component {
 
         //fetch the api:
         try {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${id()}&APPID=4ae641e8880d4cdb0796bb5b4bd85f98&units=imperial`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${id()}&APPID=4ae641e8880d4cdb0796bb5b4bd85f98&units=imperial`);
             if (!response.ok) {
                 throw Error(response.statusText);
-                this.setState({ error: true })
+            }
+            if (response === null) {
+                this.setState({ error: true });
             }
             const data = await response.json();
             console.log(data);
@@ -294,7 +296,7 @@ class City extends Component {
                     <h3>Current Conditions</h3>
                         <p className='gen-conditions-temp'>{Math.floor(temp())} F</p>
                     <div className='gen-conditions'>
-                        <img src={`http://openweathermap.org/img/w/${icon()}.png`} alt='current weather'/>
+                        <img src={`https://openweathermap.org/img/w/${icon()}.png`} alt='current weather'/>
                         <p>{condition()}</p>
                     </div>
                 </div>

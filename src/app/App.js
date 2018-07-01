@@ -28,7 +28,7 @@ class App extends Component {
     // API call for the current weather
     async componentDidMount() {
         try {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/group?id=${cityIds[0]},${cityIds[1]},${cityIds[2]},${cityIds[3]},${cityIds[4]}&APPID=4ae641e8880d4cdb0796bb5b4bd85f98&units=imperial`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/group?id=${cityIds[0]},${cityIds[1]},${cityIds[2]},${cityIds[3]},${cityIds[4]}&APPID=4ae641e8880d4cdb0796bb5b4bd85f98&units=imperial`);
             if (!response.ok) {
                 throw Error(response.statusText);
             }
