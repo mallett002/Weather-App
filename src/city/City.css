@@ -1,0 +1,145 @@
+/*ToHome*/
+.tohome {
+    background: black;
+    color: white;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+}
+
+.tohome p {
+    border: 1px solid white;
+    padding: 1em;
+    transition: all .4s ease-out;
+}
+
+.tohome p:hover {
+    background: rgb(73, 73, 73);
+}
+
+
+/*Current City*/
+.city-bg {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    height: 44em;
+}
+
+.city-name {
+    text-align: center;
+}
+
+.current-conditions {
+    text-align: center;
+}
+
+.current-conditions h3 {
+    margin: 0;
+}
+
+.gen-conditions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff7e;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.gen-conditions p {
+    color: black;
+}
+
+.gen-conditions img {
+    width: 50px;
+    height: 50px;
+}
+
+.gen-conditions-temp {
+    font-size: 2em;
+    margin: .5em;
+}
+
+.tagline {
+    font-size: 1.3em;
+}
+
+.specific-conditions {
+    text-align: center;
+    margin-top: 2em;
+}
+
+
+
+
+/*FiveDay*/
+
+.days {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+}
+
+.day {
+    background: rgb(39, 39, 39);
+    text-align: center;
+    border: 2px solid rgb(170, 170, 170);
+}
+
+
+
+@media screen and (min-width: 700px) {
+    .city-bg {
+        height: 60em;
+    }
+
+    .days {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .day {
+        width: 200px;
+    }
+
+    .tagline {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .city-bg {
+        height: 45em;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .city-bg {
+        height: 55em;
+    }
+    
+    .day {
+        margin: 0 5px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .city-bg {
+        height: 68em;
+    }
+
+    .specific-conditions {
+        margin-top: 4em;
+    }
+
+    .day {
+        margin-top: 6em;
+    }
+}
+
+@media scren and (min-width: 2000px) {
+    .city-bg {
+        height: 75em;
+    }
+}

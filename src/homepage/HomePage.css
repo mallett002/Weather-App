@@ -1,0 +1,120 @@
+.homepage {
+    background: url(../images/bgstyle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 93em;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+.home-title {
+    margin: 0;
+    padding: 1em;
+}
+
+.city-cat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.city-cat {
+    border-radius: 5px;
+    margin: 1em;
+    text-align: center;
+}
+
+.la-cat {
+    background: url(../images/losangeles.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.seattle-cat {
+    background: url(../images/seattle.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.houston-cat {
+    background: url(../images/houston.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.chicago-cat {
+    background: url(../images/chicago.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.newyork-cat {
+    background: url(../images/newyork.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.city-title {
+    margin: 0;
+    font-size: 1.5em;
+    padding-top: 4em;
+}
+
+.city-temp {
+    font-size: 1.5em;
+    margin: .5em;
+    margin-bottom: 2em;
+}
+
+.condition-container {
+    background: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-condition {
+    margin: .5em;
+    color: #6d6d6d;
+}
+
+
+/* Media Queries */
+@media screen and (min-width: 700px) {
+    .homepage {
+        height: 60em;
+    }
+
+    .city-cat-container {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .city-cat {
+        width: 300px;
+        filter: grayscale(100%);
+        transition: all .4s ease-out;
+    }
+
+    .city-cat:hover {
+        filter: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .homepage {
+        height: 75em;
+    }
+
+    .home-title {
+        margin-bottom: 1em;
+        font-size: 3em;
+    }
+}
