@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ToHome from '../toHome/ToHome';
-import FiveDay from '../fiveday/FiveDay';
+import DayForecast from '../dayForecast/DayForecast';
 import './City.css';
 import laClear from '../images/laClear.jpg';
 import seattleClear from '../images/seattleClear.jpg';
@@ -27,7 +27,6 @@ class City extends Component {
         day2: {temp:'', date:'', conditions:'', icon:''},
         day3: {temp:'', date:'', conditions:'', icon:''},
         day4: {temp:'', date:'', conditions:'', icon:''},
-        day5: {temp:'', date:'', conditions:'', icon:''},
         la: false, seattle: false, chicago: false, houston: false, newYork: false,
         loading: true,
         error: false
@@ -69,7 +68,7 @@ class City extends Component {
             console.log(data);
 
             //loop through list. Grab the Noontime ones
-            const fiveDays = () => {
+            const fourDays = () => {
                 const dateZero = data.list[0].dt_txt.split(" ")[0];
                 let days = [];
                 for(let d of data.list){
@@ -78,14 +77,11 @@ class City extends Component {
                         days.push(d);
                     }
                 }
-                if( days.length < 5 ) {
-                    days.push(data.list[data.list.length - 1 ])
-                }
                 return days;
             }
 
             //save the new array to "forecast":
-            let forecast = fiveDays();
+            let forecast = fourDays();
             console.log("the days:", forecast);
 
             //set the state according to the data retrieved:
@@ -94,7 +90,6 @@ class City extends Component {
                 day2: {temp: forecast[1].main.temp, date: forecast[1].dt, conditions: forecast[1].weather[0].description, icon: forecast[1].weather[0].icon},
                 day3: {temp: forecast[2].main.temp, date: forecast[2].dt, conditions: forecast[2].weather[0].description, icon: forecast[2].weather[0].icon},
                 day4: {temp: forecast[3].main.temp, date: forecast[3].dt, conditions: forecast[3].weather[0].description, icon: forecast[3].weather[0].icon},
-                day5: {temp: forecast[4].main.temp, date: forecast[4].dt, conditions: forecast[4].weather[0].description, icon: forecast[4].weather[0].icon},
                 loading: false, 
                 error: false
             });
@@ -105,7 +100,7 @@ class City extends Component {
 
     render() {
         const { city } = this.props.match.params;
-        const { day1, day2, day3, day4, day5, la, seattle, chicago, houston, newYork, loading, error } = this.state;
+        const { day1, day2, day3, day4, la, seattle, chicago, houston, newYork, loading, error } = this.state;
 
         //will give correct title based on url param (city)
         const title = () => {
@@ -297,7 +292,7 @@ class City extends Component {
                         <p className='gen-conditions-temp'>{Math.floor(temp())} F</p>
                     <div className='gen-conditions'>
                         <img src={`https://openweathermap.org/img/w/${icon()}.png`} alt='current weather'/>
-                        <p>{condition()}</p>
+                        <p>{condition().toUpperCase()}</p>
                     </div>
                 </div>
                 <div style={{textAlign: 'center'}}>
@@ -310,12 +305,11 @@ class City extends Component {
                     <p>Humidity: {`${humidity()}%`}</p>
                 </div>
                   
-                <FiveDay 
+                <DayForecast 
                   day1={day1}
                   day2={day2}
                   day3={day3}
                   day4={day4}
-                  day5={day5}
                 /> 
               
             </div>}

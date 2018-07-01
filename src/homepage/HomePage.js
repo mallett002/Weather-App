@@ -7,7 +7,7 @@ class HomePage extends Component {
     render() {
         return (
             <div className='homepage'>
-                <h1 className='home-title'>SELECT A CITY</h1>
+                <h1 className='home-title'>WEATHER</h1>
                 <div className='city-cat-container'>
                     <Link to='/la'>
                         <div className='city-cat la-cat'>

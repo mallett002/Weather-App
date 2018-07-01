@@ -89,7 +89,7 @@ a {
 /* Media Queries */
 @media screen and (min-width: 700px) {
     .homepage {
-        height: 60em;
+        height: 63em;
     }
 
     .city-cat-container {

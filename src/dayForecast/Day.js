@@ -20,7 +20,7 @@ class Day extends Component {
                         <p className='forecast-temp'>{Math.floor(this.props.temp)} f</p>
                     </div>
                     <div>
-                        <img className='forecast-icon' src={`http://openweathermap.org/img/w/${this.props.icon}.png`} alt='current weather'/>  
+                        <img className='forecast-icon' src={`https://openweathermap.org/img/w/${this.props.icon}.png`} alt='current weather'/>  
                     </div>
                     <div>
                         <p className='forecast-condition'>{this.props.conditions}</p>
