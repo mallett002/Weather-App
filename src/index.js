@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './app/App';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 navigator.serviceWorker.getRegistrations().then(function(registrations) {
     for(let registration of registrations) {
@@ -10,8 +10,8 @@ navigator.serviceWorker.getRegistrations().then(function(registrations) {
 } })
 
 render(
-    <BrowserRouter>
+    <HashRouter>
         <App />
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById('root')
 );
